@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import MainPage from './pages/MainPage.vue';
+import TodoItem from './TodoItem.vue';
 </script>
 
 <template>
-  <MainPage />
+  <TodoItem />
 </template>
 
 <style scoped></style>
