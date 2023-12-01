@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import TodoItem from './TodoItem.vue';
 
-const todo = ref({ id: 0, text: 'Learn the basics of vue', completed: true });
+const todos = reactive([
+  { id: 0, text: 'Learn the basics of vue', completed: true },
+  { id: 1, text: 'Learn the basics of vue', completed: false },
+  { id: 2, text: 'Learn the basics of vue', completed: false }
+]);
 </script>
 
 <template>
   <div>
     <ul class="todo-list">
       // TODO
-      <TodoItem :v-for="todo in todo" :todo="todo" /> 
+      <TodoItem v-for="todo in todos" :todo="todo" />
     </ul>
   </div>
 </template>
