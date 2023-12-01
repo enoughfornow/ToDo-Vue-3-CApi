@@ -1,8 +1,8 @@
-@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 :root {
-  --primary-color: #e30808;
+  --primary-color: #E30808;
   --secondary-color: #e3e3e3;
   --light-color: #f0f0f0;
   --reverse-color: #ffffff;
@@ -20,7 +20,7 @@ body {
   padding: 6.4rem 1.2rem;
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
-  color: var(--default-color);
+  color: var(--default-color)
 }
 
 button {
@@ -68,7 +68,7 @@ button {
 .logo {
   font-size: 2.4rem;
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--primary-color)
 }
 
 .burger {
@@ -76,7 +76,7 @@ button {
 }
 
 .burger--active {
-  color: var(--primary-color);
+  color: var(--primary-color)
 }
 
 .burger:hover {
@@ -118,7 +118,7 @@ button {
   content: '\F52A';
   font-family: bootstrap-icons !important;
   font-size: 1.7rem;
-  color: var(--primary-color);
+  color: var(--primary-color)
 }
 
 .toggle-group {
@@ -196,7 +196,7 @@ button {
 .todo-item__status .bi-check2 {
   position: relative;
   top: 0.1rem;
-  color: var(--primary-color);
+  color: var(--primary-color)
 }
 
 .todo-item--done .todo-item__status {
@@ -266,5 +266,5 @@ button {
 .app-footer {
   font-size: 1.4rem;
   text-align: center;
-  color: var(--secondary-color);
+  color: var(--secondary-color)
 }

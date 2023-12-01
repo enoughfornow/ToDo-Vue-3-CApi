@@ -1,9 +1,26 @@
-<script lang="ts" setup>
-import 
+<script setup lang="ts">
+interface IProps {
+  todo: {
+    id: number;
+    text: string;
+    completed: boolean;
+  };
+}
 
-
+defineProps<IProps>();
 </script>
 <template>
-  <div></div>
+  <div>
+    <li class="todo-item" :class="{ 'todo-item--done': todo.completed }">
+      <div class="todo-item__status">
+        <i class="bi bi-check2"></i>
+      </div>
+      <span class="todo-item__text">{{ todo.text }}</span>
+      <button class="todo-item__remove-button">
+        <i class="bi bi-trash3"></i>
+      </button>
+    </li>
+  </div>
 </template>
+
 <style scoped></style>
