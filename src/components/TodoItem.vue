@@ -8,10 +8,17 @@ interface IProps {
 }
 
 defineProps<IProps>();
+const emit = defineEmits<{
+  (e: 'toggleTodo', id: number): void;
+}>();
 </script>
 <template>
   <div>
-    <li class="todo-item" :class="{ 'todo-item--done': todo.completed }">
+    <li
+      class="todo-item"
+      :class="{ 'todo-item--done': todo.completed }"
+      @click="emit('toggleTodo', todo.id)"
+    >
       <div class="todo-item__status">
         <i class="bi bi-check2"></i>
       </div>
