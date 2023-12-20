@@ -1,27 +1,32 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ITodo } from '../types/Todo';
 import TodoItem from './TodoItem.vue';
+import { PropType } from 'vue';
 
-const todos = ref([
-  { id: 0, text: 'Learn the basics of vue', completed: true },
-  { id: 1, text: 'Learn the basics of vue', completed: false },
-  { id: 2, text: 'Learn the basics of vue', completed: false },
-]);
+const emit = defineEmits<{
+  (e: 'toggleTodo', id: number): void;
+  (e: 'deleteTodo', id: number): void;
+}>();
 
-const toggleTodo = (id: number) => {
-  console.log(id);
+defineProps({
+  todos: {
+    type: Array as PropType<ITodo[]>,
+  },
+});
 
-  todos.value = todos.value.map((todo) => ({
-    ...todo,
-    completed: todo.id === id,
-  }));
-};
+const toggleTodo = (id: number) => emit('toggleTodo', id);
+const deleteTodo = (id: number) => emit('deleteTodo', id);
 </script>
 
 <template>
   <div>
     <ul class="todo-list">
-      <TodoItem v-for="todo in todos" :todo="todo" @toggle-todo="toggleTodo" />
+      <TodoItem
+        v-for="todo in todos"
+        :todo="todo"
+        @toggle-todo="toggleTodo"
+        @delete-todo="deleteTodo"
+      />
     </ul>
   </div>
 </template>
