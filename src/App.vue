@@ -29,15 +29,21 @@ const doneTodos = computed<ITodo[]>(() => {
 });
 
 const filteredTodos = computed<ITodo[]>(() => {
-  switch (activeFilter.value) {
-    case 'Active':
-      return activeTodos.value;
-    case 'Done':
-      return doneTodos.value;
-    case 'All':
-    default:
-      return todos.value;
-  }
+  // switch (activeFilter.value) {
+  //   case 'Active':
+  //     return activeTodos.value;
+  //   case 'Done':
+  //     return doneTodos.value;
+  //   case 'All':
+  //   default:
+  //     return todos.value;
+  // }
+
+  return {
+    Active: activeTodos.value,
+    Done: doneTodos.value,
+    All: todos.value,
+  }[activeFilter.value];
 });
 
 const stats = computed<IStats>(() => {
